@@ -21,6 +21,8 @@ public class VistaModificar extends LitTemplate {
 	private TextField texto;
 	@Id("botonModificar")
 	private Button botonModificar;
+	@Id("botonCancelar")
+	private Button botonCancelar;
 
 	public VistaModificar() {
         // You can initialise any data required for the connected UI components here.
@@ -56,6 +58,14 @@ public class VistaModificar extends LitTemplate {
 
 	public void setBotonModificar(Button botonModificar) {
 		this.botonModificar = botonModificar;
+	}
+
+	public Button getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
 	}
 
 }

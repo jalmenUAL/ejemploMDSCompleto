@@ -13,11 +13,21 @@ public class ListaUsuario extends Lista {
 	ListaUsuario_item li2 = new ListaUsuario_item(this);
 	this.getListadeitems().as(VerticalLayout.class).add(li2);
 	
+	this.getBotonAnadir().addClickListener(event->Aadir());
+	
 	}
 	
 	 
 
 	public void Aadir() {
-		throw new UnsupportedOperationException();
+		
+		Aadir a = new Aadir(this);
+		
+		_usuario.getContenido().as(VerticalLayout.class).removeAll();
+	    _usuario.getContenido().as(VerticalLayout.class).add(a);
+		
+		
+		
+
 	}
 }

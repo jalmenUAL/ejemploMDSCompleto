@@ -15,12 +15,6 @@ public class VistaAadir extends LitTemplate {
 
     @Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("registrarse")
-	private Button registrarse;
-	@Id("login")
-	private Button login;
-	@Id("logout")
-	private Button logout;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("Texto")
@@ -40,29 +34,7 @@ public class VistaAadir extends LitTemplate {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Button getRegistrarse() {
-		return registrarse;
-	}
-
-	public void setRegistrarse(Button registrarse) {
-		this.registrarse = registrarse;
-	}
-
-	public Button getLogin() {
-		return login;
-	}
-
-	public void setLogin(Button login) {
-		this.login = login;
-	}
-
-	public Button getLogout() {
-		return logout;
-	}
-
-	public void setLogout(Button logout) {
-		this.logout = logout;
-	}
+	
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;

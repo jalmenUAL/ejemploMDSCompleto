@@ -17,13 +17,16 @@ export class VistaModificar extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="position:absolute; width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="align-self: stretch;" id="vaadinHorizontalLayout">
   <vaadin-text-field label="Texto" style="flex-grow: 1;" type="text" id="texto"></vaadin-text-field>
-  <vaadin-button id="botonModificar" style="align-self: center;" tabindex="0">
+  <vaadin-button id="botonModificar" style="align-self: flex-end;" tabindex="0">
     Modificar 
   </vaadin-button>
  </vaadin-horizontal-layout>
+ <vaadin-button id="botonCancelar" tabindex="0">
+  Cancelar
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
   }
