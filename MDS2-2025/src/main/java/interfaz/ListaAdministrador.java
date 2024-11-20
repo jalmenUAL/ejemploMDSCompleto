@@ -22,7 +22,7 @@ public class ListaAdministrador extends Lista {
 		this.getListadeitems().as(VerticalLayout.class).add(li);
 		ListaAdministrador_item li2 = new ListaAdministrador_item(this);
 		this.getListadeitems().as(VerticalLayout.class).add(li2);
-		
+		this.getBorrar().setEnabled(false);
 		this.getBorrar().addClickListener(event->Borrar());
 		
 	}
@@ -32,5 +32,6 @@ public class ListaAdministrador extends Lista {
 		for (int i=0; i< _item.size(); i++) {
 			this.getListadeitems().as(VerticalLayout.class).remove(_item.get(i));
 	}
+		this.getBorrar().setEnabled(false);
 	}
 }

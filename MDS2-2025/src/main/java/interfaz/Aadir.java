@@ -11,8 +11,11 @@ public class Aadir extends VistaAadir {
 		_listaUsuario = listausuario;
 		
 		this.getBotonAñadir().addClickListener(event->{
+			
 			ListaUsuario_item li = new ListaUsuario_item(_listaUsuario);
 			_listaUsuario.getListadeitems().as(VerticalLayout.class).add(li);
+			
+			
 			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).removeAll();
 		    _listaUsuario._usuario.getContenido().as(VerticalLayout.class).add(_listaUsuario);
 		});
