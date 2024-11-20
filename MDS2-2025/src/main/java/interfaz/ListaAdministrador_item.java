@@ -22,5 +22,7 @@ public class ListaAdministrador_item extends Lista_item {
 		ListaAdministrador la = (ListaAdministrador) _lista;
 		la._item.add(this);
 		
+		
+		
 	}
 }
