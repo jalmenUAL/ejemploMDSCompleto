@@ -1,11 +1,13 @@
 package interfaz;
 
+import basededatos.BDPrincipal;
+import basededatos.iCibernauta;
 import mds2.MainView;
 
-//import basededatos.iCibernauta;
+
 
 public class Cibernauta extends UsuarioGenerico {
-	//public iCibernauta _iCibernauta;
+	public iCibernauta _iCibernauta = new BDPrincipal();
 	public login _login;
 	public registrar _registrar;
 	public MainView MainView;

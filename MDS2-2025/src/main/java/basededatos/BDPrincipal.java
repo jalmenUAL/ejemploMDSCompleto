@@ -4,12 +4,15 @@ import interfaz.UsuarioRegistrado;
 import interfaz.UsuarioGenerico;
 import interfaz.Usuario;
 import interfaz.Cibernauta;
+
+import org.orm.PersistentException;
+
 import interfaz.Administrador;
 
 public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, iAdministrador, iUsuarioGenerico {
-	public usuarios _usuarios;
-	public textos _textos;
-	public administradores _administradores;
+	public usuarios _usuarios = new usuarios();
+	public textos _textos = new textos();
+	public administradores _administradores = new administradores();
 
 	public void anadir(int aId, String aTexto) {
 		throw new UnsupportedOperationException();
@@ -20,32 +23,24 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 	}
 
 	public registrado login(String aLogin, String aPassword) {
-		throw new UnsupportedOperationException();
+			registrado u = null;
+			try {
+				u = _usuarios.login(aLogin, aPassword);
+				if (u==null) {u = _administradores.login(aLogin, aPassword);}
+				
+				 
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return u;
+			
 	}
 
 	public void borrar(int aId) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado get_UsuarioRegistrado() {
-		throw new UnsupportedOperationException();
-	}
-
-	public UsuarioGenerico get_UsuarioGenerico() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario get_Usuario() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Cibernauta get_Cibernauta() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Administrador get_Administrador() {
-		throw new UnsupportedOperationException();
-	}
 
 	public texto[] cargar() {
 		throw new UnsupportedOperationException();
@@ -56,6 +51,11 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 	}
 
 	public void registrar(String aNombre, String aDNI, String aNick, String aCorreo, String aLogin, String aPassword) {
-		throw new UnsupportedOperationException();
+		try {
+			_usuarios.registrar(aDNI, aNombre, aCorreo, aNick, aLogin, aPassword);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -3,12 +3,12 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import mds2.MainView;
-
-//import basededatos.iUsuario;
+import basededatos.BDPrincipal;
+import basededatos.iUsuario;
 
 public class Usuario extends UsuarioRegistrado {
 	//
-	//public iUsuario _iUsuario;
+	public iUsuario _iUsuario = new BDPrincipal();
 	public ListaUsuario _listaUsuario;
 	public ModificarPerfil _modificarPerfil;
 	

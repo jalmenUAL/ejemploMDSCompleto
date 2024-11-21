@@ -29,6 +29,12 @@ public class VistaDatosdeperfil extends LitTemplate {
 	private Button actualizar;
 	@Id("cancelar")
 	private Button cancelar;
+	@Id("login")
+	private TextField login;
+	@Id("password")
+	private TextField password;
+	@Id("dni")
+	private TextField dni;
 
 	public VistaDatosdeperfil() {
         // You can initialise any data required for the connected UI components here.
@@ -96,6 +102,30 @@ public class VistaDatosdeperfil extends LitTemplate {
 
 	public void setCancelar(Button cancelar) {
 		this.cancelar = cancelar;
+	}
+
+	public TextField getLogin() {
+		return login;
+	}
+
+	public void setLogin(TextField login) {
+		this.login = login;
+	}
+
+	public TextField getPassword() {
+		return password;
+	}
+
+	public void setPassword(TextField password) {
+		this.password = password;
+	}
+
+	public TextField getDni() {
+		return dni;
+	}
+
+	public void setDni(TextField dni) {
+		this.dni = dni;
 	}
 
 	 

@@ -23,6 +23,8 @@ export class VistaDatosdeperfil extends LitElement {
   <vaadin-text-field label="Nick" id="nick" type="text"></vaadin-text-field>
   <vaadin-text-field label="Correo" id="correo" type="text"></vaadin-text-field>
   <vaadin-text-field label="DNI" id="dni" type="text"></vaadin-text-field>
+  <vaadin-text-field label="Login" id="login" type="text"></vaadin-text-field>
+  <vaadin-text-field label="Password" id="password" type="text"></vaadin-text-field>
   <vaadin-button id="dardealta" tabindex="0">
     Dar de alta 
   </vaadin-button>
@@ -30,7 +32,7 @@ export class VistaDatosdeperfil extends LitElement {
     Actualizar 
   </vaadin-button>
   <vaadin-button id="cancelar" tabindex="0">
-   Cancelar
+    Cancelar 
   </vaadin-button>
  </vaadin-form-layout>
 </vaadin-vertical-layout>

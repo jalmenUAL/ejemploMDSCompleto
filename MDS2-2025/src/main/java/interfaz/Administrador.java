@@ -3,11 +3,11 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import mds2.MainView;
-
-//import basededatos.iAdministrador;
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 
 public class Administrador extends UsuarioRegistrado {
-	//public iAdministrador _iAdministrador;
+	public iAdministrador _iAdministrador = new BDPrincipal();
 	public ListaAdministrador _listaAdministrador;
 	
 	Administrador(MainView MainView){super(MainView); this.getModificarperfil().setVisible(false);

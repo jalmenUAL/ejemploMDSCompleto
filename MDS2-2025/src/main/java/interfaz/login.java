@@ -9,7 +9,7 @@ import basededatos.usuario;
 
 public class login extends VistaLogin {
 	public Cibernauta _cibernauta;
-	public iCibernauta ic = new BDPrincipal();
+	
 	
 	login(Cibernauta cibernauta){
 		
@@ -19,7 +19,7 @@ public class login extends VistaLogin {
 				event->
 				{
 					
-				registrado r = ic.login(this.getLogin().getValue(), this.getPassword().getValue());
+				registrado r = this._cibernauta._iCibernauta.login(this.getLogin().getValue(), this.getPassword().getValue());
 					
 				this._cibernauta.MainView.removeAll();
 				
