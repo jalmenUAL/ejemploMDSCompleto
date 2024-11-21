@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: jalmen(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.registrado" table="registrado" lazy="false">
+		<id name="ID" column="ID" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="nombre" column="Nombre" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="DNI" column="DNI" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="correo" column="Correo" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="nick" column="Nick" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="login" column="Login" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="password" column="Password" type="string" length="255" not-null="false" lazy="false"/>
+		<joined-subclass name="basededatos.usuario" table="usuario" lazy="false">
+			<key>
+				<column name="registradoID"/>
+			</key>
+			<set name="ORM_Ha_escrito" lazy="true" cascade="save-update,lock" inverse="true">
+				<key column="usuarioregistradoID" not-null="true"/>
+				<one-to-many class="basededatos.texto"/>
+			</set>
+		</joined-subclass>
+		<joined-subclass name="basededatos.administrador" table="administrador" lazy="false">
+			<key>
+				<column name="registradoID"/>
+			</key>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>
