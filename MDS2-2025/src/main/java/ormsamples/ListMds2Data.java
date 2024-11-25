@@ -5,6 +5,14 @@
 package ormsamples;
 
 import org.orm.*;
+
+import basededatos.administrador;
+import basededatos.administradores;
+import basededatos.registrado;
+import basededatos.usuario;
+import basededatos.usuarios;
+import basededatos.BDPrincipal;
+import basededatos.iCibernauta;
 public class ListMds2Data {
 	private static final int ROW_COUNT = 100;
 	
@@ -95,6 +103,7 @@ public class ListMds2Data {
 	}
 	
 	public static void main(String[] args) {
+		/*
 		try {
 			ListMds2Data listMds2Data = new ListMds2Data();
 			try {
@@ -108,5 +117,24 @@ public class ListMds2Data {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
+		/*
+		String aLogin ="admin";
+		String aPassword = "admin";
+		administradores _administradores = new administradores();
+		usuarios _usuarios = new usuarios();
+		registrado u;
+		try {
+			u = (registrado) _usuarios.login(aLogin, aPassword);
+			if (u==null) {u = (registrado) _administradores.login(aLogin, aPassword);}
+			System.out.println(u.getID());
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
+		iCibernauta ic = new BDPrincipal();
+		registrado r =ic.login("u", "u");
+		System.out.println(r.getID());
 	}
 }

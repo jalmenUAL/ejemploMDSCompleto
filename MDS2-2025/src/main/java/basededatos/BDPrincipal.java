@@ -15,18 +15,29 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 	public administradores _administradores = new administradores();
 
 	public void anadir(int aId, String aTexto) {
-		throw new UnsupportedOperationException();
+		try {
+			_textos.anadir(aId, aTexto);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void modificar(int aId, String aTexto) {
-		throw new UnsupportedOperationException();
+		try {
+			_textos.modificar(aId, aTexto);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public registrado login(String aLogin, String aPassword) {
 			registrado u = null;
 			try {
-				u = _usuarios.login(aLogin, aPassword);
-				if (u==null) {u = _administradores.login(aLogin, aPassword);}
+				u = (registrado) _usuarios.login(aLogin, aPassword);
+				if (u==null) {u = (registrado) _administradores.login(aLogin, aPassword);}
+			
 				
 				 
 			} catch (PersistentException e) {
@@ -38,16 +49,33 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 	}
 
 	public void borrar(int aId) {
-		throw new UnsupportedOperationException();
+		try {
+			_textos.borrar(aId);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 
 	public texto[] cargar() {
-		throw new UnsupportedOperationException();
+		texto[] res = null;
+		try {
+			res =  _textos.cargar();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
 	}
 
 	public void actualizar(int aId, String aNombre, String aDNI, String aCorreo, String aNick, String aLogin, String aPassword) {
-		throw new UnsupportedOperationException();
+		try {
+			_usuarios.actualizar(aId, aNombre, aDNI, aCorreo,  aNick, aLogin, aPassword);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void registrar(String aNombre, String aDNI, String aNick, String aCorreo, String aLogin, String aPassword) {

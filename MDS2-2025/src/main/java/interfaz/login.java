@@ -1,7 +1,11 @@
 package interfaz;
 
 import vistas.VistaLogin;
+
+import com.vaadin.flow.component.notification.Notification;
+
 import basededatos.BDPrincipal;
+import basededatos.administrador;
 import basededatos.iCibernauta;
 import basededatos.registrado;
 import basededatos.usuario;
@@ -18,7 +22,8 @@ public class login extends VistaLogin {
 		this.getBotonlogin().addClickListener(
 				event->
 				{
-					
+				
+				 
 				registrado r = this._cibernauta._iCibernauta.login(this.getLogin().getValue(), this.getPassword().getValue());
 					
 				this._cibernauta.MainView.removeAll();
@@ -26,12 +31,15 @@ public class login extends VistaLogin {
 				if (r instanceof usuario) {
 				Usuario u = new Usuario(this._cibernauta.MainView);
 				this._cibernauta.MainView.add(u);
+				 
 				}
 				
-				else {Administrador a = new Administrador(this._cibernauta.MainView);
-				this._cibernauta.MainView.add(a);}
-				}
+				else if (r instanceof administrador) {Administrador a = new Administrador(this._cibernauta.MainView);
+				this._cibernauta.MainView.add(a);  }
 				
+				
+				else {Notification.show("Este usuario no existe");}
+				}
 				);
 		
 		this.getCancelar().addClickListener(
