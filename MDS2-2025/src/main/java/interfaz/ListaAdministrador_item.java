@@ -1,12 +1,13 @@
 package interfaz;
+import basededatos.texto;
 
 public class ListaAdministrador_item extends Lista_item {
 	//private event _seleccionar;
 	
 	Boolean seleccionado = false;
 
-	ListaAdministrador_item(ListaAdministrador lista) {
-		super(lista);
+	ListaAdministrador_item(ListaAdministrador lista,texto texto) {
+		super(lista, texto);
 		this.getModificar().setVisible(false);
 		
 		this.getSeleccionar().addClickListener(event->Seleccionar());

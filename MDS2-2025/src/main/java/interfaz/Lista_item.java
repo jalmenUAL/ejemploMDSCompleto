@@ -1,6 +1,7 @@
 package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import basededatos.texto;
 
 import vistas.VistaLista_item;
 
@@ -8,7 +9,7 @@ public class Lista_item extends VistaLista_item {
 	public Lista _lista;
 	public Verdetalles _verdetalles;
 
-	Lista_item(Lista lista){
+	Lista_item(Lista lista,texto texto){
 		_lista = lista;
 		this.getBotonverdetalles().addClickListener(event->Verdetalles());
 		

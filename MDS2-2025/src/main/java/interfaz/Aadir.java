@@ -7,7 +7,7 @@ import vistas.VistaAadir;
 public class Aadir extends VistaAadir {
 	public ListaUsuario _listaUsuario;
 	
-	Aadir(ListaUsuario listausuario){
+	Aadir(ListaUsuario listausuario,Usuario usuario){
 		_listaUsuario = listausuario;
 		
 		this.getBotonAñadir().addClickListener(event->{

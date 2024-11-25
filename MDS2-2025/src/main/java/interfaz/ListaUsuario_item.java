@@ -1,10 +1,11 @@
 package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import basededatos.texto;
 
 public class ListaUsuario_item extends Lista_item {
-	ListaUsuario_item(ListaUsuario lista) {
-		super(lista);
+	ListaUsuario_item(ListaUsuario lista, texto texto) {
+		super(lista,texto);
 		this.getSeleccionar().setVisible(false);
 		this.getModificar().addClickListener(event->Modificar());
 		
