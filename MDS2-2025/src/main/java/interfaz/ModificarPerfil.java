@@ -7,7 +7,7 @@ public class ModificarPerfil extends DatosdePerfil {
 	public Usuario _usuario;
 
 	ModificarPerfil(Usuario usuario) {
-		super();
+		 
 		this._usuario = usuario;
 
 		this.getNombre().setValue(_usuario.u.getNombre());

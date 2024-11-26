@@ -23,14 +23,14 @@ public class Lista_item extends VistaLista_item {
 
 		if (_lista instanceof ListaUsuario) {
 			ListaUsuario lu = (ListaUsuario) _lista;
-			Verdetalles vd = new Verdetalles(this, t);
+			_verdetalles = new Verdetalles(this, t);
 			lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
-			lu._usuario.getContenido().as(VerticalLayout.class).add(vd);
+			lu._usuario.getContenido().as(VerticalLayout.class).add(_verdetalles);
 		} else {
 			ListaAdministrador lu = (ListaAdministrador) _lista;
-			Verdetalles vd = new Verdetalles(this, t);
+			_verdetalles = new Verdetalles(this, t);
 			lu._administrador.getContenido().as(VerticalLayout.class).removeAll();
-			lu._administrador.getContenido().as(VerticalLayout.class).add(vd);
+			lu._administrador.getContenido().as(VerticalLayout.class).add(_verdetalles);
 		}
 
 	}

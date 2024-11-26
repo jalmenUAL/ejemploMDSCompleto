@@ -17,7 +17,7 @@ public class Administrador extends UsuarioRegistrado {
 	}
 
 	public void ListaAdministrador() {
-		ListaAdministrador l = new ListaAdministrador(this);
-		this.getContenido().as(VerticalLayout.class).add(l);
+		_listaAdministrador = new ListaAdministrador(this);
+		this.getContenido().as(VerticalLayout.class).add(_listaAdministrador);
 	}
 }

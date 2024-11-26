@@ -6,7 +6,7 @@ public class registrar extends DatosdePerfil {
 	public CorreoElectronico _correoElectronico;
 
 	registrar(Cibernauta cibernauta) {
-		super();
+		 
 		_cibernauta = cibernauta;
 		this.getActualizar().setVisible(false);
 		this.getDardealta().addClickListener(event -> Dardealta());
@@ -18,8 +18,8 @@ public class registrar extends DatosdePerfil {
 	}
 
 	public void Mandarconfirmacin() {
-		CorreoElectronico ce = new CorreoElectronico();
-		ce.Mandarconfirmacin();
+		_correoElectronico = new CorreoElectronico();
+		_correoElectronico.Mandarconfirmacin();
 	}
 
 	public void Dardealta() {

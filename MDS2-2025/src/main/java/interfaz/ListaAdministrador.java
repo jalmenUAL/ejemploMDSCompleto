@@ -9,7 +9,7 @@ public class ListaAdministrador extends Lista {
 	public Administrador _administrador;
 
 	ListaAdministrador(Administrador administrador) {
-		super();
+		 
 		_administrador = administrador;
 
 		texto[] elementos = this._administrador._iAdministrador.cargar();
@@ -28,8 +28,18 @@ public class ListaAdministrador extends Lista {
 
 		for (int i = 0; i < _item.size(); i++) {
 			_administrador._iAdministrador.borrar(_item.get(i).t.getID());
-			this.getListadeitems().as(VerticalLayout.class).remove(_item.get(i));
+			
 		}
+		
+		this.getListadeitems().as(VerticalLayout.class).removeAll();
+		
+		//RECARGA DESPUÉS DE BORRAR
+		texto[] elementos = this._administrador._iAdministrador.cargar();
+
+		for (int i = 0; i < elementos.length; i++) {
+			this.getListadeitems().as(VerticalLayout.class).add(new ListaAdministrador_item(this, elementos[i]));
+		}
+		
 		this.getBorrar().setEnabled(false);
 	}
 }

@@ -20,8 +20,10 @@ public class Modificar extends VistaModificar {
 			lu._usuario._iUsuario.modificar(_listaUsuario.t.getID(), this.getTexto().getValue());
 
 			// RECARGA DE LA LISTA MODIFICADA
-			ListaUsuario nlu = new ListaUsuario(lu._usuario);
-			lu._usuario.getContenido().as(VerticalLayout.class).add(nlu);
+			lu = new ListaUsuario(lu._usuario);
+			
+			
+			lu._usuario.getContenido().as(VerticalLayout.class).add(lu);
 
 		});
 

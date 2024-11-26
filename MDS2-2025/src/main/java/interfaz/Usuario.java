@@ -21,15 +21,15 @@ public class Usuario extends UsuarioRegistrado {
 	}
 
 	public void ListaUsuario() {
-		ListaUsuario l = new ListaUsuario(this);
-		this.getContenido().as(VerticalLayout.class).add(l);
+		_listaUsuario = new ListaUsuario(this);
+		this.getContenido().as(VerticalLayout.class).add(_listaUsuario);
 	}
 
 	public void ModificarPerfil() {
 
 		this.MainView.removeAll();
-		ModificarPerfil mp = new ModificarPerfil(this);
-		this.MainView.add(mp);
+		_modificarPerfil = new ModificarPerfil(this);
+		this.MainView.add(_modificarPerfil);
 
 	}
 }
