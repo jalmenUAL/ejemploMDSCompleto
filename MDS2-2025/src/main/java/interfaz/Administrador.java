@@ -11,17 +11,15 @@ import basededatos.iAdministrador;
 public class Administrador extends UsuarioRegistrado {
 	public iAdministrador _iAdministrador = new BDPrincipal();
 	public ListaAdministrador _listaAdministrador;
-	
-	
-	Administrador(MainView MainView, administrador administrador){super(MainView); this.getModificarperfil().setVisible(false);
-	texto[] texto = null;
-	ListaAdministrador(texto);
-	
+
+	Administrador(MainView MainView) {
+		super(MainView);
+		this.getModificarperfil().setVisible(false);
+		ListaAdministrador();
 	}
 
-	public void ListaAdministrador(texto[] texto) {
-		ListaAdministrador l = new ListaAdministrador(this,texto);
-		
+	public void ListaAdministrador() {
+		ListaAdministrador l = new ListaAdministrador(this);
 		this.getContenido().as(VerticalLayout.class).add(l);
 	}
 }

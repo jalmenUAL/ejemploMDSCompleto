@@ -5,11 +5,11 @@ import basededatos.texto;
 
 public class ListaUsuario_item extends Lista_item {
 	ListaUsuario_item(ListaUsuario lista, texto texto) {
-		super(lista,texto);
+		super(lista, texto);
 		this.getSeleccionar().setVisible(false);
-		this.getModificar().addClickListener(event->Modificar());
-		
-		// TODO Auto-generated constructor stub
+		this.getModificar().setVisible(false);
+		this.getModificar().addClickListener(event -> Modificar());
+
 	}
 
 	public Modificar _modificar;
@@ -19,6 +19,6 @@ public class ListaUsuario_item extends Lista_item {
 		lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
 		Modificar m = new Modificar(this);
 		lu._usuario.getContenido().as(VerticalLayout.class).add(m);
-		
+
 	}
 }

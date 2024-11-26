@@ -23,7 +23,7 @@ public class administradores {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		Mds2PersistentManager.instance().disposePersistentManager();
+		 
 		return administrador;
 	}
 }

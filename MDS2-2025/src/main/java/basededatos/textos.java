@@ -32,7 +32,7 @@ public class textos {
 		try {
 			texto e = textoDAO.getTextoByORMID(aId);
 			e.setContenido(aTexto);
-			textoDAO.refresh(e);
+			textoDAO.save(e);
 
 			t.commit();
 		} catch (Exception e) {
@@ -64,7 +64,7 @@ public class textos {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		Mds2PersistentManager.instance().disposePersistentManager();
+		 
 		return res;
 	}
 }

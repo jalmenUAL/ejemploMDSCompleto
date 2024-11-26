@@ -32,24 +32,28 @@ public class usuarios {
 		Mds2PersistentManager.instance().disposePersistentManager();
 	}
 
-	public void actualizar(int aId, String aNombre, String aCorreo, String aNick, String aDNI, String aLogin,
+	public usuario actualizar(int aId, String aNombre, String aCorreo, String aNick, String aDNI, String aLogin,
 			String aPassword) throws PersistentException {
 
+		usuario u = null;
 		PersistentTransaction t = Mds2PersistentManager.instance().getSession().beginTransaction();
 		try {
-			usuario u = usuarioDAO.getUsuarioByORMID(aId);
+			u = usuarioDAO.getUsuarioByORMID(aId);
 			u.setCorreo(aCorreo);
 			u.setDNI(aDNI);
 			u.setLogin(aLogin);
 			u.setPassword(aPassword);
 			u.setNick(aNick);
 			u.setNombre(aNombre);
-			usuarioDAO.refresh(u);
+			usuarioDAO.save(u);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		Mds2PersistentManager.instance().disposePersistentManager();
+		 
+		 
+		return u;
+		
 
 	}
 
@@ -63,7 +67,7 @@ public class usuarios {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		Mds2PersistentManager.instance().disposePersistentManager();
+		 
 		return usuario;
 	}
 }

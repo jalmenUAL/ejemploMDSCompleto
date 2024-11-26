@@ -6,22 +6,21 @@ import vistas.VistaAadir;
 
 public class Aadir extends VistaAadir {
 	public ListaUsuario _listaUsuario;
-	
-	Aadir(ListaUsuario listausuario,Usuario usuario){
+
+	Aadir(ListaUsuario listausuario) {
 		_listaUsuario = listausuario;
-		
-		this.getBotonAñadir().addClickListener(event->{
-			
-			ListaUsuario_item li = new ListaUsuario_item(_listaUsuario);
-			_listaUsuario.getListadeitems().as(VerticalLayout.class).add(li);
-			
-			
+
+		this.getBotonAñadir().addClickListener(event -> {
+
+			_listaUsuario._usuario._iUsuario.anadir(this._listaUsuario._usuario.u.getID(), this.getTexto().getValue());
 			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).removeAll();
-		    _listaUsuario._usuario.getContenido().as(VerticalLayout.class).add(_listaUsuario);
+			
+			//RECARGA DE LA LISTA CON EL ELEMENTO AÑADIDO
+			ListaUsuario nlu = new ListaUsuario(_listaUsuario._usuario);
+			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).add(nlu);
+			
+			
 		});
-		
-		
-		
-		
+
 	}
 }

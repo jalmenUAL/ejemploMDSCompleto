@@ -7,6 +7,8 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-verdetalles")
 @JsModule("./views/vista-verdetalles.ts")
@@ -22,6 +24,18 @@ public class VistaVerdetalles extends LitTemplate {
 	private Span texto;
 	@Id("volver")
 	private Button volver;
+	@Id("label")
+	private Label label;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("label1")
+	private Label label1;
+	@Id("label2")
+	private Label label2;
 
 	public VistaVerdetalles() {
         // You can initialise any data required for the connected UI components here.

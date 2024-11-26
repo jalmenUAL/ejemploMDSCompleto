@@ -69,13 +69,15 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 		return res;
 	}
 
-	public void actualizar(int aId, String aNombre, String aDNI, String aCorreo, String aNick, String aLogin, String aPassword) {
+	public usuario actualizar(int aId, String aNombre, String aDNI, String aCorreo, String aNick, String aLogin, String aPassword) {
+		usuario usuario = null;
 		try {
-			_usuarios.actualizar(aId, aNombre, aDNI, aCorreo,  aNick, aLogin, aPassword);
+			usuario = _usuarios.actualizar(aId, aNombre, aCorreo,  aNick, aDNI, aLogin, aPassword);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return usuario;
 	}
 
 	public void registrar(String aNombre, String aDNI, String aNick, String aCorreo, String aLogin, String aPassword) {
