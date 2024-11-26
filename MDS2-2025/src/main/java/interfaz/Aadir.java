@@ -14,12 +14,11 @@ public class Aadir extends VistaAadir {
 
 			_listaUsuario._usuario._iUsuario.anadir(this._listaUsuario._usuario.u.getID(), this.getTexto().getValue());
 			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).removeAll();
-			
-			//RECARGA DE LA LISTA CON EL ELEMENTO AÑADIDO
+
+			// RECARGA DE LA LISTA CON EL ELEMENTO AÑADIDO
 			ListaUsuario nlu = new ListaUsuario(_listaUsuario._usuario);
 			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).add(nlu);
-			
-			
+
 		});
 
 	}

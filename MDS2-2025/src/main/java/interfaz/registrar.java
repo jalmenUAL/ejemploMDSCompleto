@@ -18,7 +18,8 @@ public class registrar extends DatosdePerfil {
 	}
 
 	public void Mandarconfirmacin() {
-		throw new UnsupportedOperationException();
+		CorreoElectronico ce = new CorreoElectronico();
+		ce.Mandarconfirmacin();
 	}
 
 	public void Dardealta() {
