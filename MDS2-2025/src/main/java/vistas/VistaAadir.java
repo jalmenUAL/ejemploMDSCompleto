@@ -21,6 +21,17 @@ public class VistaAadir extends LitTemplate {
 	private TextField texto;
 	@Id("BotonAñadir")
 	private Button botonAñadir;
+	@Id("botonCancelar")
+	private Button botonCancelar;
+	 
+
+	public Button getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
 
 	public VistaAadir() {
         // You can initialise any data required for the connected UI components here.

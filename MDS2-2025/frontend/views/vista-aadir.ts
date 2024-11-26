@@ -24,6 +24,9 @@ export class VistaAadir extends LitElement {
     Añadir 
   </vaadin-button>
  </vaadin-horizontal-layout>
+ <vaadin-button id="botonCancelar" tabindex="0">
+  Cancelar
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
   }

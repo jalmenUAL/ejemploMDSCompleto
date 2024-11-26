@@ -1,6 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.texto;
@@ -17,10 +16,10 @@ public class ListaUsuario extends Lista {
 
 		for (int i = 0; i < elementos.length; i++) {
 			ListaUsuario_item l = new ListaUsuario_item(this, elementos[i]);
-			
+
 			int id = elementos[i].getEscrito_por().getID();
 
-			if (_usuario.u.getID()==id) {
+			if (_usuario.u.getID() == id) {
 				l.getModificar().setVisible(true);
 			}
 

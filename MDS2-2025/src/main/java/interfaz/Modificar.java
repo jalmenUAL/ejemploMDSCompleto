@@ -21,8 +21,7 @@ public class Modificar extends VistaModificar {
 
 			// RECARGA DE LA LISTA MODIFICADA
 			lu = new ListaUsuario(lu._usuario);
-			
-			
+
 			lu._usuario.getContenido().as(VerticalLayout.class).add(lu);
 
 		});
