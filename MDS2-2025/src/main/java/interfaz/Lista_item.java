@@ -1,8 +1,8 @@
 package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import basededatos.texto;
 
+import basededatos.texto;
 import vistas.VistaLista_item;
 
 public class Lista_item extends VistaLista_item {
@@ -23,12 +23,12 @@ public class Lista_item extends VistaLista_item {
 
 		if (_lista instanceof ListaUsuario) {
 			ListaUsuario lu = (ListaUsuario) _lista;
-			Verdetalles vd = new Verdetalles(this,t);
+			Verdetalles vd = new Verdetalles(this, t);
 			lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
 			lu._usuario.getContenido().as(VerticalLayout.class).add(vd);
 		} else {
 			ListaAdministrador lu = (ListaAdministrador) _lista;
-			Verdetalles vd = new Verdetalles(this,t);
+			Verdetalles vd = new Verdetalles(this, t);
 			lu._administrador.getContenido().as(VerticalLayout.class).removeAll();
 			lu._administrador.getContenido().as(VerticalLayout.class).add(vd);
 		}

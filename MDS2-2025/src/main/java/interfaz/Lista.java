@@ -1,7 +1,6 @@
 package interfaz;
 
 import java.util.Vector;
-import basededatos.texto;
 
 import vistas.VistaLista;
 

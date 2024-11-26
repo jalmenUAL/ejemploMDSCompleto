@@ -2,9 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import mds2.MainView;
 import basededatos.BDPrincipal;
 import basededatos.iUsuario;
+import mds2.MainView;
 
 public class Usuario extends UsuarioRegistrado {
 	//

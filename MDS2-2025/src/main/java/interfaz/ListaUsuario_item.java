@@ -1,6 +1,7 @@
 package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import basededatos.texto;
 
 public class ListaUsuario_item extends Lista_item {

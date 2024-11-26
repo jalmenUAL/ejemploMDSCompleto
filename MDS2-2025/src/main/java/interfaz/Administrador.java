@@ -1,12 +1,10 @@
 package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import basededatos.texto;
 
-import mds2.MainView;
 import basededatos.BDPrincipal;
-import basededatos.administrador;
 import basededatos.iAdministrador;
+import mds2.MainView;
 
 public class Administrador extends UsuarioRegistrado {
 	public iAdministrador _iAdministrador = new BDPrincipal();

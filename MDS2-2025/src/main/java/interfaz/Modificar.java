@@ -1,19 +1,15 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaModificar;
-
-
 
 public class Modificar extends VistaModificar {
 	public ListaUsuario_item _listaUsuario;
 
 	Modificar(ListaUsuario_item ListaUsuario_item) {
 		_listaUsuario = ListaUsuario_item;
-		
+
 		this.getTexto().setValue(_listaUsuario.t.getContenido());
 
 		this.getBotonModificar().addClickListener(event -> {
@@ -22,8 +18,8 @@ public class Modificar extends VistaModificar {
 			lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
 
 			lu._usuario._iUsuario.modificar(_listaUsuario.t.getID(), this.getTexto().getValue());
-	
-			//RECARGA DE LA LISTA MODIFICADA
+
+			// RECARGA DE LA LISTA MODIFICADA
 			ListaUsuario nlu = new ListaUsuario(lu._usuario);
 			lu._usuario.getContenido().as(VerticalLayout.class).add(nlu);
 

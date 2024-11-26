@@ -3,7 +3,6 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.texto;
-
 import vistas.VistaVerdetalles;
 
 public class Verdetalles extends VistaVerdetalles {
@@ -11,7 +10,7 @@ public class Verdetalles extends VistaVerdetalles {
 
 	Verdetalles(Lista_item lista, texto t) {
 		_lista = lista;
-		
+
 		this.getNick().setText(t.getEscrito_por().getNick());
 		this.getCorreo().setText(t.getEscrito_por().getCorreo());
 		this.getTexto().setText(t.getContenido());

@@ -12,7 +12,6 @@ public class ListaAdministrador_item extends Lista_item {
 		this.getModificar().setVisible(false);
 		this.getSeleccionar().addClickListener(event -> Seleccionar());
 
-		 
 	}
 
 	public void Seleccionar() {

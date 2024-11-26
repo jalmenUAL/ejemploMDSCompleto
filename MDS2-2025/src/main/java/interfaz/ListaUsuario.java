@@ -12,15 +12,17 @@ public class ListaUsuario extends Lista {
 
 		super();
 		_usuario = usuario;
-		
+
 		texto[] elementos = this._usuario._iUsuario.cargar();
-		
-		for (int i=0;i<elementos.length;i++) {
-			ListaUsuario_item l = new ListaUsuario_item(this,elementos[i]);
-			if (_usuario.u.ha_escrito.contains(elementos[i])) {l.getModificar().setVisible(true);}
+
+		for (int i = 0; i < elementos.length; i++) {
+			ListaUsuario_item l = new ListaUsuario_item(this, elementos[i]);
+			if (_usuario.u.ha_escrito.contains(elementos[i])) {
+				l.getModificar().setVisible(true);
+			}
 			this.getListadeitems().as(VerticalLayout.class).add(l);
 		}
-		
+
 		this.getBorrar().setVisible(false);
 		this.getBotonAnadir().addClickListener(event -> Aadir());
 
