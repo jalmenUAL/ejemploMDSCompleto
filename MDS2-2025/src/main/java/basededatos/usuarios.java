@@ -5,8 +5,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import basededatos.usuario;
-
 public class usuarios {
 	public BDPrincipal _en;
 	public Vector<usuario> _los_usuarios = new Vector<usuario>();
@@ -50,10 +48,8 @@ public class usuarios {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		 
-		 
+
 		return u;
-		
 
 	}
 
@@ -67,7 +63,7 @@ public class usuarios {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		 
+
 		return usuario;
 	}
 }

@@ -1,13 +1,6 @@
 package basededatos;
 
-import interfaz.UsuarioRegistrado;
-import interfaz.UsuarioGenerico;
-import interfaz.Usuario;
-import interfaz.Cibernauta;
-
 import org.orm.PersistentException;
-
-import interfaz.Administrador;
 
 public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, iAdministrador, iUsuarioGenerico {
 	public usuarios _usuarios = new usuarios();
@@ -33,19 +26,19 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 	}
 
 	public registrado login(String aLogin, String aPassword) {
-			registrado u = null;
-			try {
-				u = (registrado) _usuarios.login(aLogin, aPassword);
-				if (u==null) {u = (registrado) _administradores.login(aLogin, aPassword);}
-			
-				
-				 
-			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		registrado u = null;
+		try {
+			u = (registrado) _usuarios.login(aLogin, aPassword);
+			if (u == null) {
+				u = (registrado) _administradores.login(aLogin, aPassword);
 			}
-			return u;
-			
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return u;
+
 	}
 
 	public void borrar(int aId) {
@@ -57,11 +50,10 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 		}
 	}
 
-
 	public texto[] cargar() {
 		texto[] res = null;
 		try {
-			res =  _textos.cargar();
+			res = _textos.cargar();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -69,10 +61,11 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 		return res;
 	}
 
-	public usuario actualizar(int aId, String aNombre, String aDNI, String aCorreo, String aNick, String aLogin, String aPassword) {
+	public usuario actualizar(int aId, String aNombre, String aDNI, String aCorreo, String aNick, String aLogin,
+			String aPassword) {
 		usuario usuario = null;
 		try {
-			usuario = _usuarios.actualizar(aId, aNombre, aCorreo,  aNick, aDNI, aLogin, aPassword);
+			usuario = _usuarios.actualizar(aId, aNombre, aCorreo, aNick, aDNI, aLogin, aPassword);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

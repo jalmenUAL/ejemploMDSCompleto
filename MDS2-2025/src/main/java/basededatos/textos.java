@@ -5,8 +5,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import basededatos.texto;
-
 public class textos {
 	public BDPrincipal _en;
 	public Vector<texto> _los_textos = new Vector<texto>();
@@ -64,7 +62,7 @@ public class textos {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		 
+
 		return res;
 	}
 }

@@ -5,8 +5,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import basededatos.administrador;
-
 public class administradores {
 	public BDPrincipal _en;
 	public Vector<administrador> _los_administradores = new Vector<administrador>();
@@ -23,7 +21,7 @@ public class administradores {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		 
+
 		return administrador;
 	}
 }
