@@ -8,10 +8,10 @@ public class Cibernauta extends UsuarioGenerico {
 	public iCibernauta _iCibernauta = new BDPrincipal();
 	public login _login;
 	public registrar _registrar;
-	public MainView MainView;
+	 
 
 	public Cibernauta(MainView MainView) {
-		this.MainView = MainView;
+		super(MainView);
 		this.getLogout().setVisible(false);
 		this.getModificarperfil().setVisible(false);
 		this.getLogin().addClickListener(event -> login());

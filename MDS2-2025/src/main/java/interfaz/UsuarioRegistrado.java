@@ -7,10 +7,10 @@ import mds2.MainView;
 public class UsuarioRegistrado extends UsuarioGenerico {
 	// private event _logout;
 	// public iUsuarioRegistrado _iUsuarioRegistrado;
-	MainView MainView;
+	
 
 	UsuarioRegistrado(MainView MainView) {
-		this.MainView = MainView;
+		super(MainView);
 		this.getLogin().setVisible(false);
 		this.getRegistrarse().setVisible(false);
 
