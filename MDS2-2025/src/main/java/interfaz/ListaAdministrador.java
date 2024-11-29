@@ -33,6 +33,7 @@ public class ListaAdministrador extends Lista {
 		
 		this.getListadeitems().as(VerticalLayout.class).removeAll();
 		
+		
 		//RECARGA DESPUÉS DE BORRAR
 		texto[] elementos = this._administrador._iAdministrador.cargar();
 

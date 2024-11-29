@@ -18,13 +18,13 @@ export class VistaLista extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="position:absolute; width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout id="listadeitems" style="align-items: stretch; align-self: stretch;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout id="listadeitems" style="align-items: stretch; align-self: stretch; flex-grow: 0;"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
   <vaadin-button id="borrar" tabindex="0">
     Borrar 
   </vaadin-button>
   <vaadin-button id="botonAnadir" tabindex="0">
-   Añadir
+    Añadir 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
