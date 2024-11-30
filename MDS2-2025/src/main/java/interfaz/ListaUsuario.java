@@ -26,9 +26,12 @@ public class ListaUsuario extends Lista {
 			this.getListadeitems().as(VerticalLayout.class).add(l);
 
 		}
+		
+		this.getBotonAnadir().addClickListener(event->Aadir());
+		
 
 		this.getBorrar().setVisible(false);
-		this.getBotonAnadir().addClickListener(event -> Aadir());
+		
 
 	}
 

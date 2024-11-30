@@ -20,7 +20,13 @@ public class ListaAdministrador extends Lista {
 
 		this.getBotonAnadir().setVisible(false);
 		this.getBorrar().setEnabled(false);
-		this.getBorrar().addClickListener(event -> Borrar());
+		
+		this.getBorrar().addClickListener(event ->{		
+			Borrar();
+			
+		}
+		);
+		 
 
 	}
 
@@ -30,17 +36,18 @@ public class ListaAdministrador extends Lista {
 			_administrador._iAdministrador.borrar(_item.get(i).t.getID());
 			
 		}
+		this._administrador.getContenido().as(VerticalLayout.class).removeAll();
+		this.getBorrar().setEnabled(false);
+		
+		//RECARGA
+		texto[] elementos = this._administrador._iAdministrador.cargar();
 		
 		this.getListadeitems().as(VerticalLayout.class).removeAll();
-		
-		
-		//RECARGA DESPUÉS DE BORRAR
-		texto[] elementos = this._administrador._iAdministrador.cargar();
 
 		for (int i = 0; i < elementos.length; i++) {
 			this.getListadeitems().as(VerticalLayout.class).add(new ListaAdministrador_item(this, elementos[i]));
 		}
-		
-		this.getBorrar().setEnabled(false);
+		//RECARGA
+		this._administrador.getContenido().as(VerticalLayout.class).add(this);
 	}
 }

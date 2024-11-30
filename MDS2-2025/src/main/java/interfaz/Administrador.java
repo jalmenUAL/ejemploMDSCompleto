@@ -14,6 +14,10 @@ public class Administrador extends UsuarioRegistrado {
 		super(MainView);
 		this.getModificarperfil().setVisible(false);
 		ListaAdministrador();
+		
+		
+		
+		
 	}
 
 	public void ListaAdministrador() {

@@ -33,7 +33,9 @@ public class login extends VistaLogin {
 			}
 
 			else {
+				this._cibernauta.MainView.add(this._cibernauta);
 				Notification.show("Este usuario no existe");
+				
 			}
 		});
 

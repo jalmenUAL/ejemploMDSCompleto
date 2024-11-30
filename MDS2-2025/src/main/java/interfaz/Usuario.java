@@ -18,6 +18,7 @@ public class Usuario extends UsuarioRegistrado {
 		this.u = u;
 		this.getModificarperfil().addClickListener(event -> ModificarPerfil());
 		ListaUsuario();
+		
 	}
 
 	public void ListaUsuario() {
