@@ -40,14 +40,9 @@ public class ListaAdministrador extends Lista {
 		this.getBorrar().setEnabled(false);
 		
 		//RECARGA
-		texto[] elementos = this._administrador._iAdministrador.cargar();
-		
-		this.getListadeitems().as(VerticalLayout.class).removeAll();
-
-		for (int i = 0; i < elementos.length; i++) {
-			this.getListadeitems().as(VerticalLayout.class).add(new ListaAdministrador_item(this, elementos[i]));
-		}
-		//RECARGA
-		this._administrador.getContenido().as(VerticalLayout.class).add(this);
+		_administrador.MainView.removeAll();
+		_administrador = new Administrador(_administrador.MainView);
+		_administrador.MainView.add(_administrador);
+		//
 	}
 }

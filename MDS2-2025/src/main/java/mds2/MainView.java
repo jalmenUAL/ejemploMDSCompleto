@@ -40,9 +40,11 @@ public class MainView extends VerticalLayout {
      *            The message service. Automatically injected Spring managed
      *            bean.
      */
+	
+	public Cibernauta cb = new Cibernauta(this);
+	 
     public MainView(@Autowired GreetService service) {
-
-       Cibernauta cb = new Cibernauta(this);
+    	
        add(cb);
     }
 

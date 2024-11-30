@@ -18,11 +18,13 @@ public class Modificar extends VistaModificar {
 			lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
 
 			lu._usuario._iUsuario.modificar(_listaUsuario.t.getID(), this.getTexto().getValue());
+			
+			//RECARGA
+			lu._usuario = new Usuario(lu._usuario.MainView, lu._usuario.u);
+			lu._usuario.MainView.removeAll();
+			lu._usuario.MainView.add(lu._usuario);
+			//
 
-			// RECARGA DE LA LISTA MODIFICADA
-			lu = new ListaUsuario(lu._usuario);
-
-			lu._usuario.getContenido().as(VerticalLayout.class).add(lu);
 
 		});
 
