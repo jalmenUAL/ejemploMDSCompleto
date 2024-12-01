@@ -66,4 +66,17 @@ public class usuarios {
 
 		return usuario;
 	}
+	
+	public usuario obtenerUsuarioporId(int aId) throws PersistentException {
+		usuario usuario = null;
+		PersistentTransaction t = Mds2PersistentManager.instance().getSession().beginTransaction();
+		try {
+			usuario = usuarioDAO.loadUsuarioByORMID(aId);
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return usuario;
+	}
 }

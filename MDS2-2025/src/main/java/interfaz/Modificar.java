@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.usuario;
 import vistas.VistaModificar;
 
 public class Modificar extends VistaModificar {
@@ -20,9 +21,10 @@ public class Modificar extends VistaModificar {
 			lu._usuario._iUsuario.modificar(_listaUsuario.t.getID(), this.getTexto().getValue());
 			
 			//RECARGA
-			lu._usuario = new Usuario(lu._usuario.MainView, lu._usuario.u);
+		    usuario nubd = lu._usuario._iUsuario.obtenerUsuarioporId(lu._usuario.u.getID());
+			Usuario nu = new Usuario(lu._usuario.MainView, nubd);
 			lu._usuario.MainView.removeAll();
-			lu._usuario.MainView.add(lu._usuario);
+			lu._usuario.MainView.add(nu);
 			//
 
 

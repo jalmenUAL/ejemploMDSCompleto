@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.usuario;
 import vistas.VistaAadir;
 
 public class Aadir extends VistaAadir {
@@ -16,9 +17,10 @@ public class Aadir extends VistaAadir {
 			_listaUsuario._usuario.getContenido().as(VerticalLayout.class).removeAll();
 			
 			//RECARGA
-			_listaUsuario._usuario = new Usuario(_listaUsuario._usuario.MainView, _listaUsuario._usuario.u);
+		    usuario nubd = _listaUsuario._usuario._iUsuario.obtenerUsuarioporId(_listaUsuario._usuario.u.getID());
+			Usuario nu = new Usuario(_listaUsuario._usuario.MainView, nubd);
 			_listaUsuario._usuario.MainView.removeAll();
-			_listaUsuario._usuario.MainView.add(_listaUsuario._usuario);
+			_listaUsuario._usuario.MainView.add(nu);
 			//
 
 		});

@@ -81,4 +81,14 @@ public class BDPrincipal implements iUsuarioRegistrado, iUsuario, iCibernauta, i
 			e.printStackTrace();
 		}
 	}
+	public usuario obtenerUsuarioporId(int aId) {
+		usuario usuario=null;
+		try {
+			usuario = _usuarios.obtenerUsuarioporId(aId);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return usuario;
+	}
 }
