@@ -34,9 +34,7 @@ public class ModificarPerfil extends DatosdePerfil {
 				this.getDni().getValue(), this.getCorreo().getValue(), this.getNick().getValue(),
 				this.getLogin().getValue(), this.getPassword().getValue());
 
-		// RECARGA DEL USUARIO
 		this._usuario = new Usuario(this._usuario.MainView, u);
-
 		this._usuario.MainView.removeAll();
 		this._usuario.MainView.add(this._usuario);
 	}
