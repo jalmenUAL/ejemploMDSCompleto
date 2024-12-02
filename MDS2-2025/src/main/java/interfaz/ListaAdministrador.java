@@ -36,7 +36,6 @@ public class ListaAdministrador extends Lista {
 			_administrador._iAdministrador.borrar(_item.get(i).t.getID());
 			
 		}
-		this._administrador.getContenido().as(VerticalLayout.class).removeAll();
 		this.getBorrar().setEnabled(false);
 		
 		//RECARGA

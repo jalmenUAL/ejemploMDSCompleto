@@ -16,8 +16,6 @@ public class Modificar extends VistaModificar {
 		this.getBotonModificar().addClickListener(event -> {
 
 			ListaUsuario lu = (ListaUsuario) _listaUsuario._lista;
-			lu._usuario.getContenido().as(VerticalLayout.class).removeAll();
-
 			lu._usuario._iUsuario.modificar(_listaUsuario.t.getID(), this.getTexto().getValue());
 			
 			//RECARGA
