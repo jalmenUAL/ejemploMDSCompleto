@@ -24,8 +24,8 @@ public class registrar extends DatosdePerfil {
 
 	public void Dardealta() {
 
-		this._cibernauta._iCibernauta.registrar(this.getNombre().getValue(), this.getDni().getValue(),
-				this.getNick().getValue(), this.getCorreo().getValue(), this.getLogin().getValue(),
+		this._cibernauta._iCibernauta.registrar(this.getDni().getValue(), this.getNombre().getValue(),
+				 this.getCorreo().getValue(), this.getNick().getValue(), this.getLogin().getValue(),
 				this.getPassword().getValue());
 
 		this._cibernauta.MainView.removeAll();

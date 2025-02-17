@@ -20,6 +20,8 @@ public class login extends VistaLogin {
 					this.getPassword().getValue());
 
 			this._cibernauta.MainView.removeAll();
+			
+			
 
 			if (r instanceof usuario) {
 				Usuario u = new Usuario(this._cibernauta.MainView, (basededatos.usuario) r);
@@ -27,10 +29,12 @@ public class login extends VistaLogin {
 
 			}
 
-			else if (r instanceof administrador) {
+			if (r instanceof administrador) {
 				Administrador a = new Administrador(this._cibernauta.MainView);
 				this._cibernauta.MainView.add(a);
 			}
+			
+			
 
 			else {
 				this._cibernauta.MainView.add(this._cibernauta);
