@@ -1,5 +1,6 @@
 package mds2;
 
+import org.orm.PersistentException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.flow.component.Key;
@@ -11,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
+import basededatos.Mds2PersistentManager;
 import interfaz.Cibernauta;
 
 
@@ -46,6 +48,7 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
     	
        add(cb);
+       
     }
 
 }

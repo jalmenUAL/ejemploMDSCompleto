@@ -12,7 +12,23 @@ public class ListaUsuario extends Lista {
 
 		_usuario = usuario;
 
-		texto[] elementos = this._usuario._iUsuario.cargar();
+		/*texto[] elementos = this._usuario._iUsuario.cargar();
+
+		for (int i = 0; i < elementos.length; i++) {
+			ListaUsuario_item l = new ListaUsuario_item(this, elementos[i]);
+
+			int id = elementos[i].getEscrito_por().getID();
+
+			if (_usuario.u.getID() == id) {
+				l.getModificar().setVisible(true);
+			}
+
+			this.getListadeitems().as(VerticalLayout.class).add(l);
+
+		}
+		*/
+		
+		texto[] elementos = _usuario.u.ha_escrito.toArray();
 
 		for (int i = 0; i < elementos.length; i++) {
 			ListaUsuario_item l = new ListaUsuario_item(this, elementos[i]);
