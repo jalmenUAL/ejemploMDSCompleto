@@ -48,8 +48,9 @@ public class usuarios {
 		} catch (Exception e) {
 			t.rollback();
 		}
-
+		Mds2PersistentManager.instance().disposePersistentManager();
 		return u;
+		
 
 	}
 
@@ -63,8 +64,9 @@ public class usuarios {
 		} catch (Exception e) {
 			t.rollback();
 		}
-
+		 
 		return usuario;
+		
 	}
 	
 	public usuario obtenerUsuarioporId(int aId) throws PersistentException {

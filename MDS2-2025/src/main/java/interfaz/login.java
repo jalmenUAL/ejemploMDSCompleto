@@ -28,7 +28,7 @@ public class login extends VistaLogin {
 				this._cibernauta.MainView.add(u);
 
 			}
-
+			else
 			if (r instanceof administrador) {
 				Administrador a = new Administrador(this._cibernauta.MainView);
 				this._cibernauta.MainView.add(a);
